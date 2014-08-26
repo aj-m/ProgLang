@@ -13,8 +13,6 @@ int main() {
 	ofstream outfile;
 	infile.open("say.in");
 	outfile.open("say.out");
-	//infile.open("say.txt");
-	//Spec says say.in
 	string input = "";
 	infile >> input;
 
@@ -48,24 +46,11 @@ bool containsVowel(string s){
 }	//containsVowel
 
 bool containsNoConsecutiveTypes(string input){
-	int consecVow,consecCon = 0;	//accumulators
-	
-	for(int i = 0; i < input.length(); i++){
-		if(consecVow > 0 && consecCon > 0)
-		{
-			consecVow = 0;
-			consecCon = 0;
-			if(isVowel(input[i])) consecVow++;
-			else consecCon++;
-		}
-		else
-		{
-			if(isVowel(input[i])) consecVow++;
-			else consecCon++;
-		}
+	for(int i = 2; i < input.length(); i++){
+		if( isVowel(input[i]) && isVowel(input[i-1]) && isVowel(input[i-2]) ) return false;
+		if( !isVowel(input[i]) && !isVowel(input[i-1]) && !isVowel(input[i-2]) ) return false;
 	}
-	if(consecVow >= 3 || consecCon >= 3) return false;
-	else return true;
+	return true;
 }
 
 bool containsNoConsecutiveChars(string input){
