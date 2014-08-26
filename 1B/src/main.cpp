@@ -2,10 +2,11 @@
 #include <string>
 #include <fstream>
 using namespace std;
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
 bool isVowel(char);
 bool containsVowel(string);
-
+bool containsNoConsecutiveTypes(string);
+bool containsNoConsecutiveChars(string);
 
 int main() {
 	fstream infile;
@@ -13,11 +14,12 @@ int main() {
 	//infile.open("say.txt");
 	//Spec says say.in
 	string input = "";
+	//int elementCount = 0;
 	infile >> input;
 	while(input != "end"){
-		cout << input << endl;
-		infile >> input;
+		
 	}
+	
 		
 	return 0;
 }	//main
@@ -34,3 +36,11 @@ bool containsVowel(string s){
 	}
 	return false;
 }	//containsVowel
+
+bool containsNoConsecutiveTypes(string input){
+	
+}
+
+bool containsNoConsecutiveChars(string input){
+	
+}
