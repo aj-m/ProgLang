@@ -1,3 +1,9 @@
+/*	Assignment 1B
+ *	Title: Easier Done Than Said
+ *	Authors: Andrew Montenigro, Jessica Neal, Nate Richards 
+ */
+
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -46,7 +52,7 @@ bool containsVowel(string s){
 }	//containsVowel
 
 bool containsNoConsecutiveTypes(string input){
-	for(int i = 2; i < input.length(); i++){
+	for(int i = 2; i < input.length(); i++){	//use 3rd char in input as a start point
 		if( isVowel(input[i]) && isVowel(input[i-1]) && isVowel(input[i-2]) ) return false;
 		if( !isVowel(input[i]) && !isVowel(input[i-1]) && !isVowel(input[i-2]) ) return false;
 	}
@@ -60,7 +66,7 @@ bool containsNoConsecutiveChars(string input){
 	{
 		current = input[i];
 		if( ((current == 'e')&&(previous == 'e')) || ((current == 'o')&&(previous == 'o')) )
-		{
+		{	//accounts for 'ee' and 'oo'
 			previous = current;
 			continue;
 		}
@@ -69,3 +75,4 @@ bool containsNoConsecutiveChars(string input){
 	}
 	return true;
 }
+
