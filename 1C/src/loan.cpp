@@ -41,7 +41,7 @@ int main() {
 				loanAmountOwed -= (float)(loanMonth - previousMonth)*(monthlyPayment);
 				currentValue = initialValue - (float)(loanMonth - previousMonth)*(currentPercentage);
 			}
-			//if(loanAmountOwed < currentValue)
+			
 		
 		}
 		
